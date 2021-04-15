@@ -1,13 +1,130 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: "helvetica", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.header {
+    padding: 25px 0;
+    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+
+.primary-color {
+    background-color: #7BC06F; /* Green */
+}
+
+.secondary-color {
+    background-color: #2A7FBF; /* Green */
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 1.8em 1.8em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    border-radius: 2.6em;
+}
+
+
+.blockquote:before, .blockquote:after {
+    position: relative;
+    top: -8px;
+    color: #ccc;
+    font-size: 12em;
+    line-height: 0;
+    margin-right: -0.15em;
+    vertical-align: -0.6em;
+    z-index: -1;
+    opacity: 50%;
+}
+
+.before-blockquote:before {
+    content: open-quote;
+
+}
+
+.after-blockquote:after {
+    content: close-quote;
+}
+
+blockquote p {
+    display: inline;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+
+    blockquote {
+        margin: 1.5em 10px;
+        padding: 0.5em 10px;
+        quotes: "\201C" "\201D" "\2018" "\2019";
+        font-size: 2em;
+    }
+
+    .before-blockquote {
+        position: relative;
+        top: 60px;
+        margin-left: -210px;
+        margin-top: -45px;
+
+    }
+
+    .after-blockquote {
+        position: relative;
+        top: 120px;
+        margin-left: 450px;
+        margin-top: -45px;
+    }
 }
