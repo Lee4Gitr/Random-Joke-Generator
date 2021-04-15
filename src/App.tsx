@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import {Header} from "./Components/Header/Header";
 import {Punchline} from "./Components/Punchline/Punchline";
@@ -28,6 +28,9 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    getRandomJoke()
+  }, [])
 
   return (
     <div className="App container">
