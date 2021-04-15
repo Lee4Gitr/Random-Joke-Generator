@@ -3,7 +3,7 @@ import './App.css';
 import {Header} from "./Components/Header/Header";
 import {Punchline} from "./Components/Punchline/Punchline";
 
-type Joke = {id: number, type: string, setup: string, punchline: string}
+type Joke = { id: number, type: string, setup: string, punchline: string }
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
   const getRandomJoke = async (url: string = "https://official-joke-api.appspot.com/jokes/random") => {
     setVisible(false);
     try {
-      const response = await fetch(url);
+      const response = await fetch(url, {mode: 'no-cors'});
       if (response.ok) {
         const data: Joke = await response.json();
         setErrorMessage("")
@@ -23,15 +23,17 @@ function App() {
       } else {
         setErrorMessage(`${response.status}: ${response.statusText}`)
       }
-    }catch (e) {
+    } catch (e) {
       setErrorMessage(`${e}`)
     }
   }
 
+
   return (
     <div className="App container">
-      <Header callback={getRandomJoke} />
-      <Punchline visible={visible} setVisible={setVisible} errorMessage={errorMessage} joke={{id: joke.id, type: joke.type, setup: joke.setup, punchline: joke.punchline}}/>
+      <Header callback={getRandomJoke}/>
+      <Punchline visible={visible} setVisible={setVisible} errorMessage={errorMessage}
+                 joke={{id: joke.id, type: joke.type, setup: joke.setup, punchline: joke.punchline}}/>
     </div>
   );
 }
