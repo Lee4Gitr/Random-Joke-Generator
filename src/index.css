@@ -46,7 +46,7 @@ button {
     font-size: 1em;
     border-radius: 2.6em;
 }
-
+button:focus { outline: none; }
 
 .blockquote:before, .blockquote:after {
     position: relative;
