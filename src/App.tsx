@@ -15,7 +15,7 @@ function App() {
   const getRandomJoke = async (url: string = "https://official-joke-api.appspot.com/jokes/random") => {
     setVisible(false);
     try {
-      const response = await fetch(url, {mode: 'no-cors'});
+      const response = await fetch(url);
       if (response.ok) {
         const data: Joke = await response.json();
         setErrorMessage("")
@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => {
     getRandomJoke()
-  }, [])
+  }, []);
 
   return (
     <div className="App container">
